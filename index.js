@@ -7,15 +7,15 @@ function map(numbers, some_code) {
 }
 
 function reduce(numbers, some_function, starting_value=0) {
-	let sum;
+	let accumulator
 	if (starting_value) {
-		sum = starting_value
+		accumulator = starting_value
 	} else {
-		sum = numbers[0]
+		accumulator = numbers[0]
 	}
 	let i = starting_value ? 0 : 1
 	for (i; i < numbers.length; i++) {
-		sum = some_function(numbers[i], sum)
+		accumulator = some_function(numbers[i], accumulator)
 	}
-	return sum
+	return accumulator
 }
